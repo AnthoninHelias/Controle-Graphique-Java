@@ -93,9 +93,13 @@ public class FrmGraphique extends JFrame{
                         donnees,
                         PlotOrientation.VERTICAL,
                         true, true, false);
-                ChartFrame frame = new ChartFrame("Graphique n°4", chart1);
-                frame.pack();
-                frame.setVisible(true);
+                ChartFrame graphique4 =new ChartFrame("Moyenne des salaires par age", chart1);
+                graphique4.setVisible(true);
+                ChartPanel graph = new ChartPanel(chart1);
+                // Ajout du graphique dans le JPanel
+                pnlGraph4.add(graph);
+                // Mettre à jour le JPanel
+                pnlGraph4.validate();
 
             }
         });
