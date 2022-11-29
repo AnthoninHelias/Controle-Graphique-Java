@@ -80,7 +80,10 @@ public class FrmGraphique extends JFrame{
 
                 for (Map.Entry valeur : ctrlGraphique.GetDatasGraphique4().entrySet())
                 {
-
+                    Double vente = Double.parseDouble(((String[])valeur.getValue())[1].toString());
+                    String nomMagasin = ((String[])valeur.getValue())[0].toString();
+                    String nomSemestre = ((String[])valeur.getValue())[2].toString();
+                    donnees.setValue(vente,nomMagasin ,nomSemestre);
                 }
 
                 JFreeChart chart1 = ChartFactory.createBarChart(
@@ -104,7 +107,7 @@ public class FrmGraphique extends JFrame{
             }
         });
 
-        /*
+
         pnlGraph1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
@@ -121,7 +124,7 @@ public class FrmGraphique extends JFrame{
                 fra.setVisible(true);
             }
         });
-        */
+
 
         pnlGraph2.addMouseListener(new MouseAdapter() {
             @Override
