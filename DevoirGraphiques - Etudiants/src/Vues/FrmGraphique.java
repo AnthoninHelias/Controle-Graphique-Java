@@ -116,21 +116,75 @@ public class FrmGraphique extends JFrame{
 
                 for (Map.Entry valeur : ctrlGraphique.GetDatasGraphique1().entrySet())
                 {
-                    donnees.setValue(valeur.getKey().toString()) , Float.parseFloat(valeur.getValue().toString()));
+                    donnees.setValue(valeur.getKey().toString()) , Float.parseFloat(valeur.getValue().toString());
                 }
                 JFreeChart chart1 = ChartFactory.createLineChart("Salaire moyen " , "age des employes", "", donnees);
-                ChartFrame fra = new ChartFrame("Moyenne des salaires par age", chart1);
-                fra.pack();
-                fra.setVisible(true);
+
+
+
+
+                ChartFrame graphique1 =new ChartFrame("Moyenne des salaires par age", chart1);
+                graphique1.setVisible(true);
+                ChartPanel graph = new ChartPanel(chart1);
+                // Ajout du graphique dans le JPanel
+                pnlGraph2.add(graph);
+                // Mettre à jour le JPanel
+                pnlGraph2.validate();
             }
         });
+
 
 
         pnlGraph2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
                 super.mouseWheelMoved(e);
+                e.getWheelRotation();
             }
         });
+
+       /* pnlRoot.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                super.mouseMoved(e);
+
+
+                DefaultPieDataset donnees = new DefaultPieDataset();
+
+                for (Map.Entry valeur : ctrlGraphique.GetDatasGraphique2().entrySet())
+                {
+                    donnees.setValue(valeur.getKey().toString(), Integer.parseInt(valeur.getValue().toString()));
+                }
+
+                JFreeChart chart1 = ChartFactory.createPieChart(
+                        "Pourcentage d'homme et femme",
+                        donnees,
+                        true, //
+                        true, //
+                        true //
+                );
+
+                ChartFrame graph2 =new ChartFrame("", chart1);
+                graph2.setVisible(true);
+                ChartPanel graph = new ChartPanel(chart1);
+                // Ajout du graphique dans le JPanel
+                pnlGraph2.add(graph);
+                // Mettre à jour le JPanel
+                pnlGraph2.validate();
+
+
+
+
+
+
+
+
+            }
+        });*/
     }
+
+
+
+
+
 }
