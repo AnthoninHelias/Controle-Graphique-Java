@@ -108,11 +108,12 @@ public class FrmGraphique extends JFrame{
             public void mouseMoved(MouseEvent e) {
                 super.mouseMoved(e);
 
+
             }
         });
 
 
-        pnlGraph1.addMouseListener(new MouseAdapter() {
+        /* pnlGraph1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
                 super.mouseMoved(e);
@@ -135,7 +136,7 @@ public class FrmGraphique extends JFrame{
                 // Mettre à jour le JPanel
                 pnlGraph2.validate();
             }
-        });
+        });*/
 
 
 
@@ -144,6 +145,7 @@ public class FrmGraphique extends JFrame{
             public void mouseWheelMoved(MouseWheelEvent e) {
                 super.mouseWheelMoved(e);
                 e.getWheelRotation();
+
             }
         });
 
