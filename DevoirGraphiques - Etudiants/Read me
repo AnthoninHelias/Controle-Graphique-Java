@@ -1,0 +1,9 @@
+Nécessité d'ajouter ces 2 vues a la bdd
+
+CREATE view PourcentageFemme2 AS SELECT COUNT(numEmp)/200*100 as pourcentage
+FROM employe
+WHERE sexe="Femme";
+
+CREATE view PourcentageHomme2 AS SELECT COUNT(numEmp)/200*100 as pourcentage
+FROM employe
+WHERE sexe="Homme";
